@@ -1,8 +1,6 @@
 public class MutiplicationMethods {
 
     private static void Ala_Carte(int multiplier_A, int multiplier_B) {
-        int length = (int) (Math.log(981) / Math.log(2));
-        int[] indices = new int[length];
         int smaller_integer;
         int larger_integer;
         int result = 0;
@@ -13,6 +11,8 @@ public class MutiplicationMethods {
             larger_integer = multiplier_A;
             smaller_integer = multiplier_B;
         }
+        int length = (int) (Math.log(smaller_integer) / Math.log(2));
+        int[] indices = new int[length];
         for (int i = 0, j = 0; smaller_integer >= 1; i++) {
             if (smaller_integer % 2 != 0) {
                 indices[j++] = larger_integer;
@@ -87,6 +87,6 @@ public class MutiplicationMethods {
 
     public static void main(String[] args) {
         Ala_Carte(981, 1234);
-        Rectangular(999, 458);
+        Rectangular(981, 1234);
     }
 }
